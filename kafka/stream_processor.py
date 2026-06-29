@@ -75,14 +75,14 @@ def main():
         .format("delta") \
         .outputMode("append") \
         .option("checkpointLocation", "D:/project_data/checkpoints/silver") \
-        .start("D:/project_data/lakehouse/silver_customer_chats")
+        .start("D:\AI-Streaming-DataPlatform\project_data\lakehouse\silver_customer_chats")
 
     # Write corrupted data to Parquet files (Dead Letter Queue)
     dlq_query = dlq_df.writeStream \
         .format("parquet") \
         .outputMode("append") \
         .option("checkpointLocation", "D:/project_data/checkpoints/dlq") \
-        .start("D:/project_data/lakehouse/bad_records_dlq")
+        .start("D:\AI-Streaming-DataPlatform\project_data\lakehouse\bad_records_dlq")
 
     # Keep the script active and monitor streaming pipelines
     spark.streams.awaitAnyTermination()
