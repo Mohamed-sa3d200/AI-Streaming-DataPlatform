@@ -99,21 +99,21 @@ This project demonstrates how to build a production-grade streaming platform tha
 ```
 
 Python Producer
-│
-▼
+      │
+      ▼
 Apache Kafka
-│
-▼
+      │
+      ▼
 Apache Spark Structured Streaming
-│
-├──────────────┐
-│ │
-▼ ▼
-Valid Records Invalid Records
-│ │
-▼ ▼
-Delta Lake Dead Letter Queue
-(Silver Layer) (Parquet)
+            │
+├────────────────────────────────────────────┐
+│                                            │
+▼                                            ▼
+Valid Records                         Invalid Records
+│                                            │
+▼                                            ▼
+Delta Lake                            Dead Letter Queue
+(Silver Layer)                            (Parquet)
 
 ````
 
